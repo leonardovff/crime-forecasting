@@ -30,6 +30,7 @@ files = ["./"]
 "precommit-install" = "pre-commit install"
 
 [dependencies]
+python = ">=3.13,<3.14"
 jupyterlab = ">=4.5.3,<5"
 pandas = ">=3.0.0,<4"
 ruff = ">=0.15.1,<0.16"
@@ -38,3 +39,17 @@ isort = ">=7.0.0,<8"
 mypy = ">=1.19.1,<2"
 pre-commit = ">=4.5.1,<5"
 black-jupyter = ">=26.1.0,<27"
+folium = ">=0.20.0,<0.21"
+geopandas = ">=1.1.2,<2"
+osmnx = ">=2.1.0,<3"
+pandarallel = ">=1.6.5,<2"
+ipywidgets = ">=8.1.8,<9"
+
+[system-requirements]
+cuda = "12.1"
+
+[pypi-dependencies]
+torch = {version = ">=2.5.0", index = "https://download.pytorch.org/whl/cu126"}
+scikit-learn = ">=1.5.0"
+torchsummary = ">=1.5.1, <2"
+torchviz = ">=0.0.3, <0.0.4"
