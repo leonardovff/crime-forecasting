@@ -21,8 +21,8 @@ O pipeline é composto por 5 etapas sequenciais, replicadas para cada cidade:
 
 | Diretório | Descrição |
 |-----------|-----------|
-| `input/` | Dados brutos de ocorrências criminais (CSVs separados por `;`) |
-| `output/maceio/`, `output/arapiraca/` | Dados intermediários e finais por cidade: CSVs filtrados, máscara, GeoJSON do polígono, matriz célula × hora, `*_chrono.npz` (datasets de treino/validação), `predictions/` (predições, alvos, perdas, índices de sub-grid) e `perf_thrs/` (métricas por limiar) |
+| `input/` | Dados brutos de ocorrências criminais (CSVs separados por `;`). **Não versionado** (confidencial — termo com a PMAL) |
+| `output/maceio/`, `output/arapiraca/` | Dados intermediários e finais por cidade. A maior parte do conteúdo é gerada localmente pelos notebooks e **não é versionada** (CSVs filtrados, matriz célula × hora, `*_chrono.npz`, predições/alvos/índices de sub-grids do conjunto de validação, máscaras, HTMLs de visualização), por conter informação suficiente para reidentificar ocorrências dos dados confidenciais. Versionados no repositório apenas: GeoJSON do polígono municipal (geometria pública do OpenStreetMap), curvas de \textit{loss} por época (`predictions/convlstm_losses_*.pkl`) e tabelas de métricas por limiar (`perf_thrs/convlstm_perf_thrs_*.pkl`) |
 | `crime_deeping_learning/` | Projeto LaTeX do TCC (capítulos, bibliografia e figuras) |
 | `original/` | Material de referência: PDF do artigo de Albors Zumel et al. (2025), código original de pré-processamento e treinamento, e GeoJSONs das cidades estudadas no paper |
 | `cache/`, `scripts/` | Cache da execução paralelizada e scripts auxiliares |
