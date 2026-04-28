@@ -2,5 +2,33 @@
 # pixi environments
 .pixi
 *.egg-info
+
+# Dados brutos confidenciais (PMAL)
 input/
-output/
+
+# Conteúdo de output/ é ignorado por padrão (derivações dos dados confidenciais)
+# A cada nível, ignora-se o conteúdo (*) e re-inclui-se os subdiretórios e
+# arquivos especificamente liberados.
+
+output/*
+!output/maceio/
+!output/arapiraca/
+
+output/maceio/*
+output/arapiraca/*
+!output/maceio/predictions/
+!output/arapiraca/predictions/
+!output/maceio/perf_thrs/
+!output/arapiraca/perf_thrs/
+!output/maceio/osm_maceio.geojson
+!output/arapiraca/osm_arapiraca.geojson
+
+output/maceio/predictions/*
+output/arapiraca/predictions/*
+!output/maceio/predictions/convlstm_losses_maceio_42.pkl
+!output/arapiraca/predictions/convlstm_losses_arapiraca_42.pkl
+
+output/maceio/perf_thrs/*
+output/arapiraca/perf_thrs/*
+!output/maceio/perf_thrs/convlstm_perf_thrs_maceio_42.pkl
+!output/arapiraca/perf_thrs/convlstm_perf_thrs_arapiraca_42.pkl
